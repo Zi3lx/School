@@ -3,16 +3,18 @@
 #include <algorithm>
 #include <iostream>
 
-using namespace std;
+#include "funkcje.h"
 
-void allPermutations(int*, int);
-void randomPermutations(int*, int, int);
-void drawPermutation(int*, int);
-void nextPermutation(int*, int);
-void prevPermutation(int*, int);
+using namespace std;
 
 int main(int argc, char* argv[])
 {
+    if (argc < 3)
+    {
+        cout << "Za malo argumenow podaj przynajmniej 3" << endl;
+        return 0;
+    }
+
     for (int i  = 0; i < atoi(argv[1]); i++)
     {
         // Variables
@@ -45,20 +47,3 @@ int main(int argc, char* argv[])
     }
   return 0;
 }
-
-void allPermutations(int* tab, int arraySize)
-{
-    int loopIter = 0;
-    do
-        {
-            for (int i = 1; i <= arraySize; i++)
-                cout << tab[i-1] << " ";
-            cout << endl;
-            loopIter++;
-        } while (next_permutation(tab, tab + arraySize));
-    
-    cout << "Ilosc wykonanych permutacji "  << endl;
-    cout << loopIter << endl;
-}
-
-

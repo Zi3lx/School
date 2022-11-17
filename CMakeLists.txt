@@ -1,5 +1,7 @@
-file(GLOB SOURCES
-    source-folder/*.cpp
-)
+cmake_minimum_required(VERSION 3.9.1)
 
-add_executable(SProject ${SOURCES})
+project(School)
+
+include_directories(${../School})
+add_executable(1 1.cpp funkcje.cpp)
+
