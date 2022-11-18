@@ -29,6 +29,8 @@ void randomPermutations(int* tab, int perCount, int arraySize)
         randPermutation(tab, arraySize);
         nextPermutation(tab, arraySize);       
         prevPermutation(tab, arraySize);
+
+        iloscInwersji(tab, arraySize);
         
         cout << endl;
     }
@@ -40,7 +42,6 @@ void randPermutation(int* tab, int arraySize)
     cout << "Losowa Permutacja" << endl;
     random_shuffle(tab, tab+arraySize);
     drawPermutation(tab, arraySize);
-
 }
 
 void nextPermutation(int* tab, int arraySize)
@@ -63,4 +64,21 @@ void drawPermutation(int* tab, int arraySize)
     for (int i = 1; i <= arraySize; i++)
         cout << tab[i-1] << " ";
     cout << endl;
+}
+
+void iloscInwersji(int* tab, int arraySize)
+{
+    int inwersje = 0;
+
+    for (int i = 0; i < arraySize - 1; i++)
+        for (int j = i + 1; j < arraySize; j++)
+            if (tab[i] > tab[j])
+                inwersje++;
+    cout << "Ilosc inwersji: " << inwersje << endl;
+}
+
+void fillArray(int* tab, int arraySize)
+{
+    for (int i = 1; i <= arraySize; i++)
+        tab[i-1] = i;
 }

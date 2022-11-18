@@ -24,7 +24,6 @@ int main(int argc, char* argv[])
 
         int *tab = new int[arraySize];
 
-
         // Checking input
         if (perCount > 10000)
         {
@@ -33,8 +32,7 @@ int main(int argc, char* argv[])
         }
 
         // Filling an array
-        for (int i = 1; i <= arraySize; i++)
-            tab[i-1] = i;
+        fillArray(tab, arraySize);
 
         // Permutations
         if ((*argv[3 + (2 * i)]) == 'A')
@@ -43,7 +41,9 @@ int main(int argc, char* argv[])
         {
             randomPermutations(tab, perCount, arraySize);
         }
+
         delete[] tab;
     }
+
   return 0;
 }
