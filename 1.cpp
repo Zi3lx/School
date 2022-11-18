@@ -25,9 +25,9 @@ int main(int argc, char* argv[])
         int *tab = new int[arraySize];
 
         // Checking input
-        if (perCount > 10000)
+        if ((*argv[3 + (2 * i)] == 'A' && arraySize > 9))
         {
-            cout << "Za duzo permutacji zostalo podanych" << endl;
+            cout << "Blad " << endl;
             return 0;
         }
 
@@ -35,12 +35,10 @@ int main(int argc, char* argv[])
         fillArray(tab, arraySize);
 
         // Permutations
-        if ((*argv[3 + (2 * i)]) == 'A')
+        if (*argv[3 + (2 * i)] == 'A')
             allPermutations(tab, arraySize);
         else 
-        {
             randomPermutations(tab, perCount, arraySize);
-        }
 
         delete[] tab;
     }
