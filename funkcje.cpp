@@ -15,6 +15,9 @@ void allPermutations(int* tab, int arraySize)
             for (int i = 1; i <= arraySize; i++)
                 cout << tab[i-1] << " ";
             cout << endl;
+
+            cout << "\\newline" << endl;
+
             loopIter++;
         } while (next_permutation(tab, tab + arraySize));
     
@@ -27,14 +30,16 @@ void randomPermutations(int* tab, int perCount, int arraySize)
     for (int i = 0; i < perCount; i++)
     {
         randPermutation(tab, arraySize);
-        nextPermutation(tab, arraySize);       
+        cout << "\\newline" << endl;
+        nextPermutation(tab, arraySize);  
+        cout << "\\newline" << endl;     
         prevPermutation(tab, arraySize);
+        cout << "\\newline" << endl;
 
         inwersje(tab, arraySize);
-        
-        cout << endl;
+        cout << "\\newline" << endl;
     }
-     cout << "Ilosc wykonanych permutacji: " << perCount << endl;
+    cout << "Ilosc wykonanych permutacji: " << perCount;
 }
 
 void randPermutation(int* tab, int arraySize)
@@ -84,6 +89,7 @@ void inwersje(int* tab, int arraySize)
     else 
         cout << "permutacja nieparzysta " << endl;
 
+    cout << "\\newline" << endl;
 }
 
 void fillArray(int* tab, int arraySize)
