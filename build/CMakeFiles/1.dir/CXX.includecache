@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/LABPK/msafuryn/wp/Srodowisko/Projekt/Proj/School/1.cpp
+stdio.h
+-
+stdlib.h
+-
+algorithm
+-
+iostream
+-
+funkcje.h
+/home/LABPK/msafuryn/wp/Srodowisko/Projekt/Proj/School/funkcje.h
+
+/home/LABPK/msafuryn/wp/Srodowisko/Projekt/Proj/School/funkcje.cpp
+stdio.h
+-
+stdlib.h
+-
+algorithm
+-
+iostream
+-
+funkcje.h
+/home/LABPK/msafuryn/wp/Srodowisko/Projekt/Proj/School/funkcje.h
+
+/home/LABPK/msafuryn/wp/Srodowisko/Projekt/Proj/School/funkcje.h
+
