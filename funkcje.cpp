@@ -16,13 +16,13 @@ void allPermutations(int* tab, int arraySize)
                 cout << tab[i-1] << " ";
             cout << endl;
 
-            cout << "\\newline" << endl;
-
+            cout << "\\\\" << "\\hline" << endl;
+            
             loopIter++;
         } while (next_permutation(tab, tab + arraySize));
-    
-    cout << "Ilosc wykonanych permutacji: "  << endl;
-    cout << loopIter << endl;
+    cout << "\\\\" << endl;
+    cout << "Ilosc wykonanych permutacji: " << loopIter << endl;
+    cout << " \\\\" << "\\hline" << endl;
 }
 
 void randomPermutations(int* tab, int perCount, int arraySize)
@@ -30,14 +30,10 @@ void randomPermutations(int* tab, int perCount, int arraySize)
     for (int i = 0; i < perCount; i++)
     {
         randPermutation(tab, arraySize);
-        cout << "\\newline" << endl;
-        nextPermutation(tab, arraySize);  
-        cout << "\\newline" << endl;     
+        nextPermutation(tab, arraySize);      
         prevPermutation(tab, arraySize);
-        cout << "\\newline" << endl;
 
         inwersje(tab, arraySize);
-        cout << "\\newline" << endl;
     }
     cout << "Ilosc wykonanych permutacji: " << perCount;
 }
@@ -45,9 +41,9 @@ void randomPermutations(int* tab, int perCount, int arraySize)
 void randPermutation(int* tab, int arraySize)
 {
     cout << "Losowa Permutacja: " << endl;
-    srand(time(NULL));
     random_shuffle(tab, tab+arraySize);
     drawPermutation(tab, arraySize);
+    cout << "\\\\" << endl;
 }
 
 void nextPermutation(int* tab, int arraySize)
@@ -55,6 +51,7 @@ void nextPermutation(int* tab, int arraySize)
     cout << "Kolejna Permutacja: " << endl;
     next_permutation(tab, tab + arraySize);
     drawPermutation(tab, arraySize);
+    cout << "\\\\" << endl; 
 }
 
 void prevPermutation(int* tab, int arraySize)
@@ -63,6 +60,7 @@ void prevPermutation(int* tab, int arraySize)
     prev_permutation(tab, tab + arraySize);
     prev_permutation(tab, tab + arraySize);
     drawPermutation(tab, arraySize);
+    cout << "\\\\" << endl;
 }
 
 void drawPermutation(int* tab, int arraySize)
@@ -89,7 +87,8 @@ void inwersje(int* tab, int arraySize)
     else 
         cout << "permutacja nieparzysta " << endl;
 
-    cout << "\\newline" << endl;
+    cout << "\\\\" << endl;
+    cout << "\\hline" << endl;
 }
 
 void fillArray(int* tab, int arraySize)

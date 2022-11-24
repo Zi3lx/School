@@ -16,6 +16,8 @@ int main(int argc, char* argv[])
 
     int *tab = new int[arraySize];
 
+    srand(time(NULL));
+
     // Checking input
     if ((*argv[2] == 'A' && arraySize > 9))
     {

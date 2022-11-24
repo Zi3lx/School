@@ -1,3 +1,4 @@
+#pragma onces
 void allPermutations(int*, int);
 void randomPermutations(int*, int, int);
 void drawPermutation(int*, int);
