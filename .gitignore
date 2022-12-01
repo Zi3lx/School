@@ -2,3 +2,9 @@
 *.log
 *.tex
 *.pdf
+CMakeCache.txt
+*.swp
+*.cmake
+CMakeFiles/*
+generator_main
+!header.tex
