@@ -1,3 +1,0 @@
-/home/LABPK/msafuryn/wp/Srodowisko/Projekt/Proj/School/build/CMakeFiles/rebuild_cache.dir
-/home/LABPK/msafuryn/wp/Srodowisko/Projekt/Proj/School/build/CMakeFiles/1.dir
-/home/LABPK/msafuryn/wp/Srodowisko/Projekt/Proj/School/build/CMakeFiles/edit_cache.dir
