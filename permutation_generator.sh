@@ -48,9 +48,12 @@ fi
 
 declared_number_of_lines=$(head -n 1 "$config_file")
 
-cat header.tex > generated_file.tex
 
+if ! cat header.tex > generated_file.tex; then
+  echo "Error: copying header failed"
+  exit 1
 
+fi
 
 for ((i=2;i<=declared_number_of_lines+1;i++)); do
   current_line="$(awk "NR==$i" "$config_file")"
