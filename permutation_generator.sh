@@ -14,25 +14,42 @@ fi
 
 if ! [[ -r "generated_file.tex" && -w "generated_file.tex" ]]; then
   echo "Error: generated_file.tex doesn't have read/write rights"
+  exit 1
 fi
 
 if ! [[ -r "generated_file.aux" && -w "generated_file.aux" ]]; then
   echo "Error: generated_file.aux doesn't have read/write rights"
+  exit 1
+
 fi
 
 if ! [[ -r "generated_file.log" && -w "generated_file.log" ]]; then
   echo "Error: generated_file.log doesn't have read/write rights"
+  exit 1
+
+fi
+if [[ -f "generated_file.pdf" && ! -r "generated_file.pdf" && ! -w "generated_file.log" ]]; then
+  echo "Error: generated_file.pdf doesn't have read/write rights"
+  exit 1
+
 fi
 
+if [[ -f "header.tex" && ! -r "header.tex" ]]; then
+  echo "Error: header.tex doesn't have read rights"
+  exit 1
 
+fi
+
+if ! [[ -f "header.tex" ]]; then
+  echo "Error: header.tex doesn't exist"
+  exit 1
+
+fi
 
 declared_number_of_lines=$(head -n 1 "$config_file")
 
-echo '\title{Permutations}' >> generated_file.tex
-echo '\documentclass{article}' >> generated_file.tex
-echo '\begin{document}' >> generated_file.tex
-echo '\author{Generator output}' >> generated_file.tex
-echo '\maketitle' >> generated_file.tex
+cat header.tex > generated_file.tex
+
 
 
 for ((i=2;i<=declared_number_of_lines+1;i++)); do
