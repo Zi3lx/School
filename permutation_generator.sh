@@ -98,5 +98,10 @@ for ((i=2;i<=declared_number_of_lines+1;i++)); do
 done
 echo "\end{document}" >> generated_file.tex
 
-pdflatex generated_file.tex
+if ! pdflatex generated_file.tex; then
+  echo "Error: Latex error"
+  exit 1
+
+fi
+
 evince generated_file.pdf &
