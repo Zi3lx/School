@@ -35,12 +35,13 @@ void printPermutationWithParameters(vector<int> const &input) {
   printNextPermutation(input);
   cout << "PREV: ";
   printPreviousPermutation(input);
+  cout << "SQUARE: ";
+  printSquare(input);
   cout << "INVERSIONS: ";
   int inversions = numberOfInversions(input);
   cout << inversions << endl;
   cout << "IS_EVEN: ";
   cout << isEven(inversions) << endl;
-  
 }
 
 void printNextPermutation(vector<int> input) {
@@ -74,7 +75,7 @@ void printNumberOfInversions(vector<int> const &input) {
 }
 
 void printAllPermutations(vector<int> input) {
-  //vector<int> initial=input;
+  // vector<int> initial=input;
   do {
     printPermutationWithParameters(input);
   } while (next_permutation(input.begin(), input.end()));
@@ -92,19 +93,24 @@ void printNRandomPermutations(vector<int> input, int n) {
   }
 }
 
-void printTwoLineNotation(vector<int> const &input)
-{
-				for(int i=1;i<=input.size();i++)
-					if(i==input.size())
-								cout<<i<<" \\\\ ";
-					else
-                cout<<i<<" & ";
-        for(int i=0;i<input.size();i++)
-          if(i==input.size())
-								cout<<input[i]<<endl;
-					else
-                cout<<input[i]<<" & ";
-        cout<<endl;
+void printTwoLineNotation(vector<int> const &input) {
+  for (int i = 1; i <= input.size(); i++)
+    if (i == input.size())
+      cout << i << " \\\\ ";
+    else
+      cout << i << " & ";
+  for (int i = 0; i < input.size(); i++)
+    if (i == input.size())
+      cout << input[i] << endl;
+    else
+      cout << input[i] << " & ";
+  cout << endl;
 }
 
-
+void printSquare(vector<int> const &input) {
+  for (int i = 0; i < input.size(); i++) {
+    int index = input[i] - 1;
+    cout << input[index] << " ";
+  }
+  cout << endl;
+}

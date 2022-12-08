@@ -1,11 +1,11 @@
 #pragma once
+#include <algorithm>
+#include <chrono>
+#include <iostream>
+#include <random>
 #include <stdio.h>
 #include <stdlib.h>
-#include <algorithm>
-#include <iostream>
 #include <vector>
-#include <chrono>
-#include <random>
 
 /*
 Output specification:
@@ -20,7 +20,7 @@ For each permutation - properties separated by newline:
 */
 using namespace std;
 
-vector <int> generateInitialSet(size_t size);
+vector<int> generateInitialSet(size_t size);
 void printPermutation(vector<int> const &input);
 void printPermutationWithParameters(vector<int> const &input);
 void printNextPermutation(vector<int> input);
@@ -32,3 +32,4 @@ void printAllPermutations(vector<int> input);
 void printNRandomPermutations(vector<int> input, int n);
 
 void printTwoLineNotation(vector<int> const &input);
+void printSquare(vector<int> const &input);

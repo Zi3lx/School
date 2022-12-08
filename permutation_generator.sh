@@ -82,6 +82,10 @@ for ((i = 2; i <= declared_number_of_lines + 1; i++)); do
 				echo "\subsubsection{Previous permutation:}" >>generated_file.tex
 				echo "" >>generated_file.tex
 				echo "$result" >>generated_file.tex
+			elif [[ $operation = "SQUARE" ]]; then
+				echo "\subsubsection{Square: }" >>generated_file.tex
+				echo "" >>generated_file.tex
+				echo "$result" >>generated_file.tex
 			elif [[ $operation = "INVERSIONS" ]]; then
 				echo "\subsubsection{Number of inversions in permutation:}" >>generated_file.tex
 				echo "" >>generated_file.tex
