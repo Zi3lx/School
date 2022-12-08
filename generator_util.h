@@ -31,3 +31,4 @@ void printNumberOfInversions(vector<int> const &input);
 void printAllPermutations(vector<int> input);
 void printNRandomPermutations(vector<int> input, int n);
 
+void printTwoLineNotation(vector<int> const &input);

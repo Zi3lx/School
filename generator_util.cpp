@@ -29,6 +29,8 @@ void printPermutation(vector<int> const &input) {
 void printPermutationWithParameters(vector<int> const &input) {
   cout << "PERMUTATION: ";
   printPermutation(input);
+  cout << "TWO_LINE: ";
+  printTwoLineNotation(input);
   cout << "NEXT: ";
   printNextPermutation(input);
   cout << "PREV: ";
@@ -38,6 +40,7 @@ void printPermutationWithParameters(vector<int> const &input) {
   cout << inversions << endl;
   cout << "IS_EVEN: ";
   cout << isEven(inversions) << endl;
+  
 }
 
 void printNextPermutation(vector<int> input) {
@@ -71,7 +74,7 @@ void printNumberOfInversions(vector<int> const &input) {
 }
 
 void printAllPermutations(vector<int> input) {
-  // vector<int> initial=input;
+  //vector<int> initial=input;
   do {
     printPermutationWithParameters(input);
   } while (next_permutation(input.begin(), input.end()));
@@ -88,12 +91,20 @@ void printNRandomPermutations(vector<int> input, int n) {
     printPermutationWithParameters(temp);
   }
 }
-/*
+
 void printTwoLineNotation(vector<int> const &input)
 {
+				for(int i=1;i<=input.size();i++)
+					if(i==input.size())
+								cout<<i<<" \\\\ ";
+					else
+                cout<<i<<" & ";
         for(int i=0;i<input.size();i++)
-                cout<<input[i]<<" ";
+          if(i==input.size())
+								cout<<input[i]<<endl;
+					else
+                cout<<input[i]<<" & ";
         cout<<endl;
 }
 
-*/
+
