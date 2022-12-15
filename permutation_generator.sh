@@ -2,6 +2,8 @@
 
 config_file="$1"
 
+start=`date +%s%N`
+
 config_error=$(./config_error_handler.sh "$config_file" 100)
 
 if ! [ -z "${config_error}" ]; then
@@ -109,5 +111,8 @@ if ! pdflatex generated_file.tex; then
 	exit 1
 
 fi
+
+end=`date +%s%N`
+echo "`expr $end - $start`" >> time.txt
 
 evince generated_file.pdf &
